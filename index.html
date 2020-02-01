@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Molengo&display=swap"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
-    <title>Phone Book App></title>
-  </head>
-  <body>
-    <div>
-      <p>nume:</p>
-      <input class="nume" type="text" />
-    
-      <p>telefon:</p>
-      <input class="numar" type="number" />
-    </div>
-    
-    <!-- poti folosi asa, ca sa fie mai usor la forms sau inputuri (vezi cum targetezi asta in js):
-    <label>prenume: <input type="text"/></label> -->
-    
-    <div>
-      <button class="btn" onclick="adaugaInLista()">Adauga</button>
-    </div>
-    
-    <div>
-      <ul class="tabel hidden">
-        <li><span>nume</span><span>numar</span></li>
-      </ul>
-      <ul class="lista-nume"></ul>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Molengo&display=swap"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js" defer></script>
+		<title>Phone Book App></title>
+	</head>
+	<body>
+		<div>
+			<label>Nume: <input class="nume" type="text"/></label>
+
+			<label>Telefon: <input class="telefon"/></label>
+		</div>
+
+		<div>
+			<button class="btn" onclick="adaugaInLista()">adauga</button>
+		</div>
+
+		<div>
+			<ul class="hidden">
+				<li class="bold"><span>Nume</span><span>Telefon</span></li>
+			</ul>
+			<ul class="lista-date"></ul>
+		</div>
+	</body>
 </html>

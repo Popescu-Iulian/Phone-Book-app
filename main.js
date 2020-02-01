@@ -1,16 +1,20 @@
 const nume = document.querySelector('.nume');
-const numar = document.querySelector('.numar');
-const listaNume = document.querySelector('.lista-nume');
+const telefon = document.querySelector('.telefon');
+const listaDate = document.querySelector('.lista-date');
+const hiddenUl = document.querySelector('.hidden');
 
 function adaugaInLista() {
-	const x = `
+	const newLi = `
   <li>
-    <span>${nume.value}</span><span>${numar.value}</span><button>edit</button
+    <span>${nume.value}</span><span>${telefon.value}</span><button>edit</button
     ><button>delete</button>
-  </li>`;
+  </li>
+  `;
 
-	listaNume.insertAdjacentHTML('beforeend', x);
+	hiddenUl.classList.remove('hidden');
+
+	listaDate.insertAdjacentHTML('beforeend', newLi);
 
 	nume.value = '';
-	numar.value = '';
+	telefon.value = '';
 }
