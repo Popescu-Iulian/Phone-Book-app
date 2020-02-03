@@ -3,7 +3,7 @@ const telefon = document.querySelector('.telefon');
 const listaDate = document.querySelector('.lista-date');
 const hiddenUl = document.querySelector('.hidden');
 
-function adaugaInLista() {
+function add() {
 	const newLi = `
   <li>
     <span>${nume.value}</span><span>${telefon.value}</span><button>edit</button
