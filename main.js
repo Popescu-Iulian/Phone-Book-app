@@ -1,24 +1,3 @@
-// const nume = document.querySelector('.nume');
-// const telefon = document.querySelector('.telefon');
-// const listaDate = document.querySelector('.lista-date');
-// const hiddenUl = document.querySelector('.hidden');
-
-// function add() {
-// 	const newLi = `
-//   <li>
-//     <span>${nume.value}</span><span>${telefon.value}</span><button>edit</button
-//     ><button>delete</button>
-//   </li>
-//   `;
-
-// 	hiddenUl.classList.remove('hidden');
-
-// 	listaDate.insertAdjacentHTML('beforeend', newLi);
-
-// 	nume.value = '';
-// 	telefon.value = '';
-// }
-
 let list = [
 	{
 		nume: 'ion',
@@ -61,10 +40,8 @@ function add(event) {
 	};
 
 	if (indexEdit === undefined) {
-		//trebuie sa adaug la sfarsit
 		list.push(newContact);
 	} else {
-		//inlocuiesc obiectul vechi cu cel nou preluat din formular
 		list[indexEdit] = newContact;
 	}
 
@@ -75,7 +52,7 @@ function add(event) {
 }
 
 function edit(idx) {
-	document.querySelector('.btn').innerHTML = 'modifica';
+	document.querySelector('.btn').innerHTML = 'salveaza';
 
 	document.querySelector('.nume').value = list[idx].nume;
 
