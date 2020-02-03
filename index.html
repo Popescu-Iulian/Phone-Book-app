@@ -16,19 +16,19 @@
 		<script src="main.js" defer></script>
 		<title>Phone Book App></title>
 	</head>
-	<body>
+	<body onload="draw()">
 		<div>
-			<label>Nume: <input class="nume" type="text"/></label>
+			<label>Nume: <input class="nume"/></label>
 
 			<label>Telefon: <input class="telefon"/></label>
 		</div>
 
 		<div>
-			<button class="btn" onclick="add()">adauga</button>
+			<button class="btn" onclick="add(event)">adauga</button>
 		</div>
 
 		<div>
-			<ul class="hidden">
+			<ul class="">
 				<li class="bold"><span>Nume</span><span>Telefon</span></li>
 			</ul>
 			<ul class="lista-date"></ul>
