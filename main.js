@@ -1,33 +1,33 @@
-let list = [];
+const contactsList = [];
 
-var indexEdit;
+var editIdx;
 
 function draw() {
-	let tableHead = document.querySelector('.table-head');
-	var str = '';
+	const tableHead = document.querySelector('.table-head');
+	let str = '';
 
-	for (var i = 0; i < list.length; i++) {
+	for (let i = 0; i < contactsList.length; i++) {
 		str += `
     <li>
-      <span>${list[i].nume}</span><span>${list[i].telefon}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
+      <span>${contactsList[i].name}</span><span>${contactsList[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
     </li>
     `;
 	}
 
-	if (list.length == 0) {
+	if (contactsList.length == 0) {
 		tableHead.classList.add('hidden');
 	} else {
 		tableHead.classList.remove('hidden');
 	}
 
-	document.querySelector('.lista-date').innerHTML = str;
+	document.querySelector('.table-body').innerHTML = str;
 
-	document.querySelector('.btn').innerHTML = 'adauga';
+	document.querySelector('.btn').innerHTML = 'Add';
 }
 
 function del(idx) {
-	if (confirm(`Esti sigur ca vrei sa stergi ${list[idx].nume} ?`)) {
-		list.splice(idx, 1);
+	if (confirm(`Do you want to delete contact ${contactsList[idx].name}?`)) {
+		contactsList.splice(idx, 1);
 
 		draw();
 	}
@@ -36,29 +36,29 @@ function del(idx) {
 function add(event) {
 	event.preventDefault();
 
-	var newContact = {
-		nume: document.querySelector('.nume').value,
-		telefon: document.querySelector('.telefon').value
+	const newContact = {
+		name: document.querySelector('.name').value,
+		phone: document.querySelector('.phone').value
 	};
 
-	if (indexEdit === undefined) {
-		list.push(newContact);
-	} else {
-		list[indexEdit] = newContact;
+	if (editIdx === undefined) {
+		contactsList.push(newContact);
 	}
 
-	document.querySelector('.nume').value = '';
-	document.querySelector('.telefon').value = '';
+	contactsList[editIdx] = newContact;
+
+	document.querySelector('.name').value = '';
+	document.querySelector('.phone').value = '';
 
 	draw();
 }
 
 function edit(idx) {
-	document.querySelector('.btn').innerHTML = 'salveaza';
+	document.querySelector('.btn').innerHTML = 'Save';
 
-	document.querySelector('.nume').value = list[idx].nume;
+	document.querySelector('.name').value = contactsList[idx].name;
 
-	document.querySelector('.telefon').value = list[idx].telefon;
+	document.querySelector('.phone').value = contactsList[idx].phone;
 
-	window.indexEdit = idx;
+	window.editIdx = idx;
 }
