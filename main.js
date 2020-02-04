@@ -4,7 +4,7 @@ const btn = document.querySelector('.btn');
 const tableHead = document.querySelector('.table-head');
 const tableBody = document.querySelector('.table-body');
 
-var editIdx;
+let editIdx;
 
 const contactsList = [];
 
@@ -69,5 +69,5 @@ function edit(idx) {
 
 	phone.value = contactsList[idx].phone;
 
-	window.editIdx = idx;
+	editIdx = idx;
 }
