@@ -46,16 +46,20 @@ function add(event) {
 		phone: phone.value
 	};
 
-	if (editIdx === undefined) {
-		contactsList.push(newContact);
+	if (name.value.length < 3) {
+		alert('Name must have at least 3 letters!');
+	} else {
+		if (editIdx === undefined) {
+			contactsList.push(newContact);
+		}
+
+		contactsList[editIdx] = newContact;
+
+		name.value = '';
+		phone.value = '';
+
+		draw();
 	}
-
-	contactsList[editIdx] = newContact;
-
-	name.value = '';
-	phone.value = '';
-
-	draw();
 }
 
 function edit(idx) {
