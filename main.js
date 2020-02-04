@@ -1,9 +1,14 @@
-const contactsList = [];
+const name = document.querySelector('.name');
+const phone = document.querySelector('.phone');
+const btn = document.querySelector('.btn');
+const tableHead = document.querySelector('.table-head');
+const tableBody = document.querySelector('.table-body');
 
 var editIdx;
 
+const contactsList = [];
+
 function draw() {
-	const tableHead = document.querySelector('.table-head');
 	let str = '';
 
 	for (let i = 0; i < contactsList.length; i++) {
@@ -20,9 +25,9 @@ function draw() {
 		tableHead.classList.remove('hidden');
 	}
 
-	document.querySelector('.table-body').innerHTML = str;
+	tableBody.innerHTML = str;
 
-	document.querySelector('.btn').innerHTML = 'Add';
+	btn.innerHTML = 'Add';
 }
 
 function del(idx) {
@@ -37,8 +42,8 @@ function add(event) {
 	event.preventDefault();
 
 	const newContact = {
-		name: document.querySelector('.name').value,
-		phone: document.querySelector('.phone').value
+		name: name.value,
+		phone: phone.value
 	};
 
 	if (editIdx === undefined) {
@@ -47,18 +52,18 @@ function add(event) {
 
 	contactsList[editIdx] = newContact;
 
-	document.querySelector('.name').value = '';
-	document.querySelector('.phone').value = '';
+	name.value = '';
+	phone.value = '';
 
 	draw();
 }
 
 function edit(idx) {
-	document.querySelector('.btn').innerHTML = 'Save';
+	btn.innerHTML = 'Save';
 
-	document.querySelector('.name').value = contactsList[idx].name;
+	name.value = contactsList[idx].name;
 
-	document.querySelector('.phone').value = contactsList[idx].phone;
+	phone.value = contactsList[idx].phone;
 
 	window.editIdx = idx;
 }
