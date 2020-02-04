@@ -1,13 +1,9 @@
-let list = [
-	{
-		nume: 'ion',
-		telefon: '123'
-	}
-];
+let list = [];
 
 var indexEdit;
 
 function draw() {
+	let tableHead = document.querySelector('.table-head');
 	var str = '';
 
 	for (var i = 0; i < list.length; i++) {
@@ -16,6 +12,12 @@ function draw() {
       <span>${list[i].nume}</span><span>${list[i].telefon}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
     </li>
     `;
+	}
+
+	if (list.length == 0) {
+		tableHead.classList.add('hidden');
+	} else {
+		tableHead.classList.remove('hidden');
 	}
 
 	document.querySelector('.lista-date').innerHTML = str;
