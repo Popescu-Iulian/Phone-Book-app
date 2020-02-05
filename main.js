@@ -1,38 +1,38 @@
-const name = document.querySelector('.name');
-const phone = document.querySelector('.phone');
-const btn = document.querySelector('.btn');
-const tableHead = document.querySelector('.table-head');
-const tableBody = document.querySelector('.table-body');
+const NAME = document.querySelector('.name');
+const PHONE = document.querySelector('.phone');
+const BTN = document.querySelector('.btn');
+const TABLE_HEAD = document.querySelector('.table-head');
+const TABLE_BODY = document.querySelector('.table-body');
 
 let editIdx;
 
-const contactsList = [];
+const CONTACTS_LIST = [];
 
 function draw() {
 	let str = '';
 
-	for (let i = 0; i < contactsList.length; i++) {
+	for (let i = 0; i < CONTACTS_LIST.length; i++) {
 		str += `
     <li>
-      <span>${contactsList[i].name}</span><span>${contactsList[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
+      <span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
     </li>
     `;
 	}
 
-	if (contactsList.length == 0) {
-		tableHead.classList.add('hidden');
+	if (CONTACTS_LIST.length == 0) {
+		TABLE_HEAD.classList.add('hidden');
 	} else {
-		tableHead.classList.remove('hidden');
+		TABLE_HEAD.classList.remove('hidden');
 	}
 
-	tableBody.innerHTML = str;
+	TABLE_BODY.innerHTML = str;
 
-	btn.innerHTML = 'Add';
+	BTN.innerHTML = 'Add';
 }
 
 function del(idx) {
-	if (confirm(`Do you want to delete contact ${contactsList[idx].name}?`)) {
-		contactsList.splice(idx, 1);
+	if (confirm(`Do you want to delete contact ${CONTACTS_LIST[idx].name}?`)) {
+		CONTACTS_LIST.splice(idx, 1);
 
 		draw();
 	}
@@ -41,33 +41,33 @@ function del(idx) {
 function add(event) {
 	event.preventDefault();
 
-	const newContact = {
-		name: name.value,
-		phone: phone.value
+	const NEW_CONTACT = {
+		name: NAME.value,
+		phone: PHONE.value
 	};
 
-	if (name.value.length < 3) {
+	if (NAME.value.length < 3) {
 		alert('Name must have at least 3 letters!');
 	} else {
 		if (editIdx === undefined) {
-			contactsList.push(newContact);
+			CONTACTS_LIST.push(NEW_CONTACT);
 		}
 
-		contactsList[editIdx] = newContact;
+		CONTACTS_LIST[editIdx] = NEW_CONTACT;
 
-		name.value = '';
-		phone.value = '';
+		NAME.value = '';
+		PHONE.value = '';
 
 		draw();
 	}
 }
 
 function edit(idx) {
-	btn.innerHTML = 'Save';
+	BTN.innerHTML = 'Save';
 
-	name.value = contactsList[idx].name;
+	NAME.value = CONTACTS_LIST[idx].name;
 
-	phone.value = contactsList[idx].phone;
+	PHONE.value = CONTACTS_LIST[idx].phone;
 
 	editIdx = idx;
 }
