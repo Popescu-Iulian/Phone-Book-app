@@ -13,9 +13,9 @@ function draw() {
 
 	for (let i = 0; i < CONTACTS_LIST.length; i++) {
 		str += `
-    <li>
-      <span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
-    </li>
+			<li>
+				<span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
+			</li>
     `;
 	}
 
@@ -28,6 +28,8 @@ function draw() {
 	TABLE_BODY.innerHTML = str;
 
 	BTN.innerHTML = 'Add';
+
+	editIdx = undefined;
 }
 
 function del(idx) {
