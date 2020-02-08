@@ -14,7 +14,7 @@ function draw() {
 	for (let i = 0; i < CONTACTS_LIST.length; i++) {
 		str += `
 			<li>
-				<span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="edit(${i})">edit</button><button onclick="del(${i})">delete</button>
+				<span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="editContact(${i})">edit</button><button onclick="deleteContact(${i})">delete</button>
 			</li>
     `;
 	}
@@ -32,7 +32,7 @@ function draw() {
 	editIdx = undefined;
 }
 
-function del(idx) {
+function deleteContact(idx) {
 	if (confirm(`Do you want to delete contact ${CONTACTS_LIST[idx].name}?`)) {
 		CONTACTS_LIST.splice(idx, 1);
 
@@ -40,7 +40,7 @@ function del(idx) {
 	}
 }
 
-function add(event) {
+function addContact(event) {
 	event.preventDefault();
 
 	const NEW_CONTACT = {
@@ -64,7 +64,7 @@ function add(event) {
 	}
 }
 
-function edit(idx) {
+function editContact(idx) {
 	BTN.innerHTML = 'Save';
 
 	NAME.value = CONTACTS_LIST[idx].name;
