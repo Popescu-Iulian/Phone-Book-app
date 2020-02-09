@@ -13,20 +13,25 @@
 		<title>Phone Book App></title>
 	</head>
 	<body onload="draw()">
-		<div>
-			<label>Name: <input class="name"/></label>
-			<label>Phone: <input class="phone"/></label>
-		</div>
+		<div id="container">
+			<div class="header">
+				<div>
+					<label>Name: <input class="name"/></label>
+					<label>Phone: <input class="phone"/></label>
+				</div>
+				<div>
+					<button class="btn" onclick="addContact(event)"></button>
+				</div>
+			</div>
 
-		<div>
-			<button class="btn" onclick="addContact(event)"></button>
-		</div>
-
-		<div>
-			<ul class="table-head">
-				<li class="bold"><span>Name</span><span>Phone</span></li>
-			</ul>
-			<ul class="table-body"></ul>
+			<div class="list">
+				<div>
+					<ul class="table-head">
+						<li class="bold"><span>Name</span><span>Phone</span></li>
+					</ul>
+					<ul class="table-body"></ul>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
