@@ -27,7 +27,7 @@ function draw() {
 
 	TABLE_BODY.innerHTML = str;
 
-	BTN.innerHTML = 'Add';
+	BTN.innerHTML = 'Add contact';
 
 	editIdx = undefined;
 }

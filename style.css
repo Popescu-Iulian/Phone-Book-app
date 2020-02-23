@@ -1,3 +1,4 @@
+/* === GENERAL === */
 * {
 	padding: 0;
 	margin: 0;
@@ -14,17 +15,13 @@ body {
 }
 
 #container {
-	max-height: 77%;
+	display: flex;
+	flex-direction: column;
+	max-height: 80%;
 	width: 80%;
 	margin: 1rem auto;
 	border-radius: 10px;
 	overflow: hidden;
-}
-
-#container,
-.inputs {
-	display: flex;
-	flex-direction: column;
 }
 
 /* === INPUTS === */
@@ -68,10 +65,15 @@ body {
 	display: inline-block;
 	width: 42%;
 	padding-left: 0.4rem;
+	color: lightslategray;
 }
 
 .head span:last-child {
 	width: 15%;
+}
+
+.hidden {
+	display: none;
 }
 
 /* === CONTACTS === */
@@ -125,6 +127,56 @@ body {
 
 /* === MEDIA QUERIES === */
 @media (min-width: 768px) {
+	/* === GENERAL === */
+	#container {
+		width: 70%;
+	}
+
+	/* === INPUTS === */
+	.inputs {
+		padding: 1rem 2rem;
+	}
+
+	.inputs label {
+		display: inline-block;
+		width: 47.8%;
+		font-size: 1.5rem;
+	}
+
+	.inputs label:last-child {
+		margin-left: 1rem;
+	}
+
+	.inputs input[type='text'] {
+		font-size: 1rem;
+		padding: 0.3rem;
+	}
+
+	.inputs .btn {
+		font-size: 1rem;
+		letter-spacing: 1px;
+		padding: 5px;
+		font-weight: 500;
+	}
+
+	/* === HEAD === */
+	.head span {
+		font-size: 1.1rem;
+	}
+
+	/* === CONTACTS === */
+	.table-body li {
+		padding: 0.5rem 0;
+		font-size: 1.2rem;
+	}
+
+	.table-body li button {
+		margin-left: 5px;
+	}
+
+	.table-body li i {
+		font-size: 1.2rem;
+	}
 }
 
 @media (min-width: 1024px) {
