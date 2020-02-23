@@ -48,15 +48,14 @@ function addContact(event) {
 		phone: PHONE.value
 	};
 
-	if (NAME.value.length < 3) {
-		alert('Name must have at least 3 letters!');
+	if (NAME.value.length === 0 || PHONE.value.length === 0) {
+		alert('Please fill in all the fields!');
 	} else {
 		if (editIdx === undefined) {
 			CONTACTS_LIST.push(NEW_CONTACT);
+		} else {
+			CONTACTS_LIST[editIdx] = NEW_CONTACT;
 		}
-
-		CONTACTS_LIST[editIdx] = NEW_CONTACT;
-
 		NAME.value = '';
 		PHONE.value = '';
 
