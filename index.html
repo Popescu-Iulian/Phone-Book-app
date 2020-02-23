@@ -6,15 +6,19 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Molengo&display=swap"
+			href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Bitter|Nunito&display=swap"
+			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="style.css" />
 		<script src="main.js" defer></script>
-		<title>Phone Book App></title>
+		<title>Phone Book app</title>
 	</head>
 	<body onload="draw()">
 		<div id="container">
-			<div class="header">
+			<div class="inputs">
 				<div>
 					<label>Name: <input class="name"/></label>
 					<label>Phone: <input class="phone"/></label>
@@ -24,13 +28,16 @@
 				</div>
 			</div>
 
-			<div class="list">
-				<div>
-					<ul class="table-head">
-						<li class="bold"><span>Name</span><span>Phone</span></li>
-					</ul>
-					<ul class="table-body"></ul>
-				</div>
+			<div class="head">
+				<ul class="table-head">
+					<li>
+						<em><span>Name</span><span>Phone</span><span></span></em>
+					</li>
+				</ul>
+			</div>
+
+			<div class="contacts">
+				<ul class="table-body"></ul>
 			</div>
 		</div>
 	</body>

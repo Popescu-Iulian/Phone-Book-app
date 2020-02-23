@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-.hidden {
-	display: none;
-}
-
 body {
 	height: 100vh;
 	display: flex;
@@ -17,65 +13,119 @@ body {
 	font-family: 'Nunito', sans-serif;
 }
 
-#container,
-.header {
-	display: flex;
-	flex-direction: column;
-}
-
 #container {
 	max-height: 77%;
-	width: 70%;
+	width: 80%;
 	margin: 1rem auto;
 	border-radius: 10px;
 	overflow: hidden;
 }
 
-.header {
+#container,
+.inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+/* === INPUTS === */
+.inputs {
 	width: 100%;
-	text-align: center;
-	padding: 1rem 2rem;
+	padding: 0.5rem 2rem;
 	background-color: lightseagreen;
 	color: white;
 }
 
-.list {
-	background-color: lightsteelblue;
-	overflow: auto;
+.inputs input {
+	margin-bottom: 0.8rem;
+	padding: 3px;
 }
 
+.inputs input,
+.inputs .btn {
+	width: 100%;
+	border: none;
+	font-size: 0.8rem;
+	outline: none;
+}
+
+.inputs .btn {
+	padding: 3px;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: lightblue;
+}
+
+.inputs .btn:hover {
+	background-color: lightgreen;
+}
+
+/* === HEAD === */
+.head {
+	background-color: bisque;
+}
+
+.head span {
+	display: inline-block;
+	width: 42%;
+	padding-left: 0.4rem;
+}
+
+.head span:last-child {
+	width: 15%;
+}
+
+/* === CONTACTS === */
+.contacts {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.table-body li {
+	padding: 0.3rem 0;
+	background: lightgray;
+	font-size: 1rem;
+	word-wrap: break-word;
+}
+
+.table-body li:nth-child(even) {
+	background: whitesmoke;
+}
+
+.table-body li:hover {
+	background: darkgray;
+}
+
+.table-body li span {
+	display: inline-block;
+	width: 42%;
+	padding-left: 0.4rem;
+}
+
+.table-body li button {
+	outline: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: inline-block;
+	width: 6%;
+	margin: 0 2px;
+}
+
+.table-body li i {
+	font-size: 0.8rem;
+}
+
+.table-body .fa-user-edit {
+	color: lightskyblue;
+}
+
+.table-body .fa-user-times {
+	color: lightcoral;
+}
+
+/* === MEDIA QUERIES === */
 @media (min-width: 768px) {
 }
 
 @media (min-width: 1024px) {
 }
-
-/* ============================= */
-
-div {
-	margin: 1rem;
-}
-
-ul {
-	list-style-type: none;
-}
-
-span {
-	display: inline-block;
-	width: 200px;
-}
-
-button {
-	padding: 3px;
-	margin-right: 5px;
-}
-
-li {
-	margin-bottom: 10px;
-}
-
-.table-head {
-	font-weight: bold;
-}
-
-/* ============================= */

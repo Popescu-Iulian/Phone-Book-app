@@ -14,7 +14,7 @@ function draw() {
 	for (let i = 0; i < CONTACTS_LIST.length; i++) {
 		str += `
 			<li>
-				<span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="editContact(${i})">edit</button><button onclick="deleteContact(${i})">delete</button>
+				<span>${CONTACTS_LIST[i].name}</span><span>${CONTACTS_LIST[i].phone}</span><button onclick="editContact(${i})"><i class="fas fa-user-edit"></i></button><button onclick="deleteContact(${i})"><i class="fas fa-user-times"></i></button>
 			</li>
     `;
 	}
