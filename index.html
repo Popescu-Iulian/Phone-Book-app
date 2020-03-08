@@ -20,8 +20,20 @@
 		<div id="container">
 			<div class="inputs">
 				<div>
-					<label>Name: <input type="text" class="name"/></label>
-					<label>Phone: <input type="text" class="phone"/></label>
+					<label
+						>Name:
+						<input
+							type="text"
+							class="name"
+							onkeypress="addContactByEnter(event)"
+					/></label>
+					<label
+						>Phone:
+						<input
+							type="text"
+							class="phone"
+							onkeypress="addContactByEnter(event)"
+					/></label>
 				</div>
 				<div>
 					<button class="btn" onclick="addContact(event)"></button>

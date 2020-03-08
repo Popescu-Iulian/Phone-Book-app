@@ -63,6 +63,12 @@ function addContact(event) {
 	}
 }
 
+function addContactByEnter(event) {
+	if (event.key === 'Enter') {
+		addContact(event);
+	}
+}
+
 function editContact(idx) {
 	BTN.innerHTML = 'Save';
 
